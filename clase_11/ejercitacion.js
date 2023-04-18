@@ -40,8 +40,9 @@ De lo contrario, deberá imprimir “Extracción realizada correctamente, su nue
 saldo es: XXXX”.
 Si llegaste hasta acá, felicidades, el equipo de desarrollo y el tech leader están
 impresionados con tu trabajo. */
+/* 
+let clienteEncontrado = banco.consultarCliente("Ramon Connell");
 
-archivo
 //la lista de clientes.
 let arrayCuentas = [
     {
@@ -77,6 +78,69 @@ let arrayCuentas = [
   ];
   // podes continuar tu codigo a partir de aca!
 
+const banco = {
+  clientes: arrayCuentas
+  consultarCliente: function (nombre) {
+    let mensajeError =
+      "No se encontro ninguna coincidencia, por favor verifica los datos ingresados"
+    let clienteEncontrado
+    for (let i = 0; i < this.clientes.length; i++) {
+      if (this.clientes[i].titularCuenta === nombre) {
+        clienteEncontrado = this.clientes[i]
+      }
+    }
+    // Antes de retornar pregunto di clientrEncontrado existe, es decir si contiene un objeto, si lo contiene
+    return clienteEncontrado ? clienteEncontrado : mensajeError
+  }   
+
+  deposito: function (nombre, cantDeposito) {
+    //Realizamos el metodo de consultar cliente para no repetirnos, y lo guardamos en una variable auxiliar
+    let clienteEncontrado = this.consultarCliente(nombre)
+    // Generamos una variable aux de mensaje para el retorno final
+    let mensaje
+    // Consultamos si el resultado de encontrar a un cliente fue un objeto con la cuenta o si fue un mensaje
+    if (typeof clienteEncontrado !== "string") { 
+      // Si el cliente fue localizado realizamos la suma al saldo actual y la guardamos (es lo mismo realiza)
+      clienteEncontrado.saldoEnPesos += cantDeposito
+      mensaje = `Depósito realizado, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`
+     } else {      
+      mensaje = 
+      "No se encontro ninguna coincidencia, por favor verifique los datos inghresados"
+    }
+    return mensaje
+  }
+
+  extraccion: function (nombre, cantExtraccion) {
+    // El metodo de extraccion es similar a deposito con la diferencia que luego de verificar el clienteEncontrado
+    let clienteEncontrado = this.consultarCliente(nombre)
+    let mensaje
+    if (typeof clienteEncontrado !== "string") {
+      if (clienteEncontrado.saldoEnPesos - cantExtraccion >= 0) {
+        clienteEncontrado.saldoEnPesos -= cantExtraccion
+      mensaje = 
+      `Extracción realizada correctamente, su nuevo saldo es: ${clienteEncontrado.saldoEnPesos}`
+      } else {
+        mensaje = `Fondos insuficientes`
+      }
+    } else {
+      mensaje =
+        "No se encontro ninguna coincidencia, por favor verificar los datos encontrados"
+    }
+    return mensaje
+  }
+}
+
+console.log('****** Metodo consultar cliente ******');
+console.log(banco.consultarCliente('Jarret Lafuente'));
+console.log(banco.consultarCliente('Abigael'));
+console.log('****** Metodo deposito ******');
+console.log(banco.consultarCliente('Abigael Natte', 1000));
+console.log(banco.consultarCliente('Abigael', 1000));
+console.log('****** Metodo extraccion ******');
+console.log(banco.consultarCliente('Abigael Natte', 1000));
+console.log(banco.consultarCliente('Abigael Natte', 30000));
+console.log(banco.consultarCliente('Abigael', 30000));
+ */
 
   /* Bonus extra
 Para que no te quedes con las ganas y puedas seguir practicando si así lo deseas, te
@@ -84,8 +148,6 @@ proponemos algunos ejercicios más. Tené en cuenta que a partir de acá los eje
 pueden escalar en dificultad. Como siempre decimos, paciencia, ignorá la complejidad y
 tratá de resolverlo con las herramientas que tengas a tu disposición. También podés
 buscar información extra en Google o documentaciones que conozcas.
-
-2
 
 Propiedad única
 Crear una función llamada propiedadUnica que reciba un arreglo de objetos como

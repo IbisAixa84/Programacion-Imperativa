@@ -46,16 +46,19 @@ console.log(factorial(5))
 
 console.log('***************')
 
-function fibonacci(n) {
-    let number1 = 0
-    let number2 = 1
-  
-    for (i = 0; i < n; i++) {
-      let current = number1 + number2
-      number1 = number2
-      number2 = current
-      console.log(current)
+function fibonacci(limite) {
+    let a = 0
+    let b = 1
+    let c
+    console.log(a)
+    console.log(b)
+
+    for (let i = 2; i < limite; i++) {
+        c = a + b
+        a = b
+        b = c
+        console.log(c)
     }
-  }
+}
   
-fibonacci(30)
+fibonacci(10)
