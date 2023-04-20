@@ -1,4 +1,5 @@
 /* Objetos literales
+
 Como vimos, los objetos son unas de las estructuras más importantes de la
 programación, tanto que hay toda un área en función de ellos. Para entender mejor por
 qué son tan útiles e importantes vamos a realizar una serie de prácticas con el fin de

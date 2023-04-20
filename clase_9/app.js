@@ -1,3 +1,5 @@
+// CONDICIONALES
+
 // Crear una funcion que dado el numero ingresado por parametro, si ese numero es mayor de 500, se debe calcular y mostrar en pantalla el 18% de este
 
 function calcularPorcentaje(num) {

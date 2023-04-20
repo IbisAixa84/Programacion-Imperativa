@@ -1,5 +1,7 @@
 const prompt = require('prompt-sync')();
 
+// TRABAJANDO CON FUNCIONES
+
 function squared(b) {
     return b * b;
 }

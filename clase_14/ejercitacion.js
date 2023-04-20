@@ -102,3 +102,22 @@ Desarrollar una función llamada incrementarSaldo que reciba como parámetro el 
 Reutilizando la función  buscarPorId 
 
 */
+
+
+
+/* Ejercicios
+A partir de el siguiente array de edades nos solicitan realizar lo siguiente:
+
+
+const edades = [11, 12, 15, 18, 25, 22, 10, 33, 18, 5];
+
+
+
+Obtener en un nuevo array las edades menores a 18.
+Obtener en un nuevo array las edades mayor o igual a 18.
+Obtener en un nuevo array las edades igual a 18.
+Obtener el menor.
+Obtener el mayor. 
+Obtener el promedio de edades.
+Incrementar en 1 todas las edades.
+ */

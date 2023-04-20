@@ -1,4 +1,4 @@
-// BUCLES Y REPETICIONES
+// BUCLES Y REPETICIONES / Ciclos: Repetir, repetir...
 
 
 // Crear una funcion que reciba 5 parametros y retorne el promedio de todos ellos

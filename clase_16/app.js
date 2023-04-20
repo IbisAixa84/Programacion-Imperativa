@@ -1,3 +1,5 @@
+//ALGORITMOS DE ITERACION Y TOMA DE DECISIONES
+
 let matrix = [
     [5, 2, 8],
     [6, 3, 3],
