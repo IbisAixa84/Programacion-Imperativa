@@ -44,3 +44,40 @@ Cargarlos en una matriz y luego,
 hacer la suma de los valores horizontales de cada fila, los verticales de cada columna y las 2 diagonales, e imprimirlas por consola.
 
  */
+
+fila1 = [4,9,2]
+fila2 = [3,5,7]
+fila3 = [8,1,6]
+
+let matrizDe3 = []
+matrizDe3.push(fila1, fila2, fila3);
+console.table(matrizDe3)
+
+function sumarFila(matriz) {
+   for (let i = 0; i < matriz.length; i++) {
+     let sumatoria = 0
+     for (let j = 0; j < matriz[i].length; j++) {
+        sumatoria += matriz[i][j]
+     }
+     console.log((sumatoria));
+    } 
+}
+
+sumarFila(matrizDe3)
+
+
+//Imprimir la multiplicacion  de cada columna
+
+function imprimirMultiplicacion(matriz) {
+    for (let i = 0; i < matriz.length; i++) {
+      let producto = 1
+      for (let j = 0; j < matriz[i].length; j++) {
+        producto *= matriz[j][i]
+      }  
+      if (producto % 2 === 0) {
+        console.log(producto);
+      }
+    }
+}
+
+imprimirMultiplicacion(matrizDe3)
