@@ -49,6 +49,7 @@ function imprimirEdad(nacimiento) {
     let edad= anioActual - nacimiento
     return `"Tienes ${edad} años"`
 }
+
 console.log(imprimirEdad(nacimiento));
 
 
@@ -57,7 +58,7 @@ del 1 al 10 y le pida al usuario que lo trate de adivinar. Si el
 número es correcto debe imprimir en la consola "Felicitaciones,
 ese era!", de lo contrario, debe imprimir "Lo siento, intenta
 nuevamente!"*/
-/* 
+
 let numeroAleatorio = parseInt(Math.random()* 10)+1;
   console.log(numeroAleatorio);
   let num;
@@ -68,7 +69,7 @@ let numeroAleatorio = parseInt(Math.random()* 10)+1;
     }else{
         console.log("Sigue intentando");
     }
-}  */
+}  
 
 
 /*6) Escribí un programa que imprima los números pares del 0 al

@@ -1,38 +1,25 @@
-/* Controlando el flujo de nuestras aplicaciones
-Cuando programemos una aplicación, el usuario va a poder tomar diferentes rumbos
-dentro de ella dependiendo de los datos, igual que en un libro de “Elige tu propia
-aventura” —por ejemplo, no es lo mismo aplicar un descuento o un recargo—. Para
-poder tener control sobre la ejecución de nuestro programa, existen las estructuras
-condicionales.
+/* Si quisiéramos restringir el acceso a una discoteca, tendríamos que saber si la
+persona es mayor o menor de edad. */
 
-Veamos cómo funciona
-Si quisiéramos restringir el acceso a una discoteca, tendríamos que saber si la
-persona es mayor o menor de edad. Esto lo podríamos resolver con una condición
-muy sencilla. ¿Qué opinás de nuestro programa para filtrar el acceso?
- */
-
-if (edad>=18){
+/* if (edad>=18){
 console.log("Puede pasar")
 }else{
 console.log("No puede pasar")
-}
+} */
 
-/* Agregá caminos
-Revisá el siguiente código y asegurate de entenderlo para poder avanzar con el
-ejercicio. */
+/* Revisá el siguiente código y asegurate de entenderlo para poder avanzar con el ejercicio. */
 
-let edad = 20 //(el número es a modo de ejemplo, podés cambiarlo o crear otras para tener varias pruebas)
-
+/* let edad = 20 
 if(edad < 18) {
 console.log("No puede pasar al bar.")
 } else if (edad < 21){
 console.log("Puede pasar al bar, pero no puede tomar alcohol.")
 } else {
 console.log("Puede pasar al bar y tomar alcohol.")
-}
+} */
 
-/* Sin repetirte, modificá tu código de forma tal que cumpla con estas consignas:
-● Si la edad es negativa, que se muestre en la consola este mensaje: "Error, edad
+
+/* ● Si la edad es negativa, que se muestre en la consola este mensaje: "Error, edad
 inválida. Por favor ingrese un número válido."
 Importante: no se deberá mostrar ningún otro mensaje.
 ● Si tiene 21 años, además de darle la bienvenida, felicitarlo por haber llegado a
@@ -40,7 +27,21 @@ la mayoría de edad.
 ● Si su edad es impar, decirle en cualquiera de los mensajes: "¿Sabías que tu
 edad es impar?". */
 
-totalAPagar()
+function esMayorDeEdad(edad) {
+    if (edad < 0) {
+        return "Error, edad inválida. Por favor ingrese un número válido."
+    } else if (edad === 21) {
+        return "Felicidades eres mayor de edad"
+    } else if (edad % 2 !== 1) {
+        return "Es par"
+    } else {
+        return "¿Sabías que tu edad es impar?"
+    }
+}
+
+console.log(esMayorDeEdad(21));
+
+
 /* Declará una función llamada totalAPagar() que reciba como parámetros: vehiculo y
 litrosConsumidos.
 A continuación, definí y realizá los cálculos para obtener el total a pagar, teniendo en
@@ -49,9 +50,26 @@ cuenta las siguientes consideraciones:
 ● Si es “moto”, ha de ser $70.
 ● Si es “autobús”, ha de ser $55.
 ● Si los litros consumidos están entre 0 y 25, se ha de añadir $50 al total a pagar.
-● Si los litros consumidos son mayor a 25, se ha de añadir $25 al total a pagar.
+● Si los litros consumidos son mayor a 25, se ha de añadir $25 al total a pagar.*/
 
-Local de sándwiches
+function totalAPagar(vehiculo, litro) {
+    let total = 0
+    let coche = 86
+    let moto = 70
+    let autobus = 55
+    if (vehiculo === coche) {
+        return vehiculo * litro
+    } else if (vehiculo === moto) {
+        return vehiculo *litro
+    } else if (vehiculo === autobus) {
+        return vehiculo * litro
+    }
+
+}
+console.log(totalAPagar(moto, 2))
+
+
+/*Local de sándwiches
 Necesitamos armar el sistema para un local de venta de sándwiches. Los clientes
 eligen el sándwich base que tiene un precio y, por cada selección siguiente, se le suma
 el valor de su selección al precio. Por ejemplo, partiendo de un sándwich base
