@@ -10,7 +10,8 @@ function calcularPorcentaje(num) {
     }
 }
 
-calcularPorcentaje(550)
+console.log(calcularPorcentaje(550));
+
 
 function calculo(num) {
     let resultado = 0
@@ -25,5 +26,5 @@ function calculo(num) {
     return resultado
 }
 
-calculo(550)
+console.log(calculo(550))
 

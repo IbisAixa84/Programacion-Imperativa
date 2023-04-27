@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')()
+
 /* Si quisiéramos restringir el acceso a una discoteca, tendríamos que saber si la
 persona es mayor o menor de edad. */
 
@@ -52,7 +54,7 @@ cuenta las siguientes consideraciones:
 ● Si los litros consumidos están entre 0 y 25, se ha de añadir $50 al total a pagar.
 ● Si los litros consumidos son mayor a 25, se ha de añadir $25 al total a pagar.*/
 
-function totalAPagar(vehiculo, consumoXLtr) {
+/* function totalAPagar(vehiculo, consumoXLtr) {
     let resultado = 0
     if (vehiculo == "coche") {
         return 85 * consumoXLtr
@@ -61,12 +63,12 @@ function totalAPagar(vehiculo, consumoXLtr) {
     } else if (vehiculo == "autobus") {
         return 55 * consumoXLtr 
     }
-}
+} */
 
-console.log(totalAPagar("coche", 26));
+//console.log(totalAPagar("coche", 26));
 
 
-function totalConsumido(consumoXLtr) {
+/* function totalConsumido(totalAPagar) {
     if (consumoXLtr  > 0 && consumoXLtr  <= 25) {
         return consumoXLtr + 50
     } else if (consumoXLtr  > 25) {
@@ -74,23 +76,9 @@ function totalConsumido(consumoXLtr) {
     }
 }
 
-console.log(totalConsumido(5));
+console.log(totalConsumido(5)); */
 
-/* function calculo(num) {
-    let resultado = 0
-    if (num > 500) {
-        resultado = num * 0.18
-    } else if (num <= 500 && num >= 250) {
-        resultado = num * 0.15
-    } else {
-        resultado = num
-    }
 
-    return resultado
-}
-
-console.log(calculo(550))
- */
 //condicion ? if condicion es verdadera : if condicion es falsa
 //const edad = 32;
 //const ciudadano = edad >= 18 ? "Puede votar" : "No puede votar";
@@ -133,23 +121,40 @@ función deberá consultar primero qué tipo de sándwich base se seleccionó, l
 tipo de pan, y por último deberá verificar qué adicionales se seleccionaron.
 Finalmente, deberá retornar el valor numérico del total a pagar del cliente. */
 
-/* Extra bonus
-Si llegaste hasta acá, estás más que bien. ¡Felicitaciones!
-Para que no te quedes con las ganas y puedas seguir practicando si así lo deseas, te
-proponemos este otro ejercicio. Tené en cuenta que a partir de acá los ejercicios
-pueden escalar en dificultad. Como decimos siempre, paciencia, ignorá la complejidad
-y tratá de resolverlo con las herramientas que tengas a tu disposición. También podés
-buscar información extra en Google o documentaciones que conozcas.
+/* let dia = 'jueves'
+function finDeSemana (dia) {	
+	switch (dia) {
+		case 'viernes':
+ 		console.log('buen finde');
+ 		break;
+		case 'lunes':
+ 		console.log('buena semana');
+ 		break;
+	default:
+ 	console.log('buen dia');
+ }
+} */
 
-¿Cuál es el número secreto?
+
+
+/* ¿Cuál es el número secreto?
 Creá una función que reciba un parámetro numérico y verifique si el mismo es el
 número secreto. El número secreto deberá ser seleccionado de manera random de
 entre 1 y 10 —investigá qué hace la función Math.random()—. En caso de ser correcto,
 retorna un mensaje felicitando al usuario y, en caso de que no acierte, retorna un
-mensaje de aliento junto con el número ingresado y el secreto.
+mensaje de aliento junto con el número ingresado y el secreto.*/
 
-abrirParacaidas()
-Crea una función llamada abrirParacaidas() que recibe dos parámetros: velocidad y
+let numA = Number(prompt('Ingrese su nombre (A): '))
+//let numB = Number(prompt('Ingrese su apellido (B): '))
+function gettRandomInt(numA) {
+    //let numeroSecreto  
+    return Math.floor(Math.random() * (numA)) 
+}
+
+console.log(gettRandomInt(numA))
+
+
+/* Crea una función llamada abrirParacaidas() que recibe dos parámetros: velocidad y
 altura. La función deberá decirnos si el paracaídas debe abrirse teniendo en cuenta lo
 siguiente:
 ● La velocidad debe ser menor a 1000 km/h.
@@ -179,3 +184,5 @@ Por ejemplo: "Calificaste la película como Muy Mala. Lo lamentamos mucho.".
 En caso de que ingresara un valor distinto, mostrarle el mensaje: "Ingresaste un valor
 inválido".
 Cuando el usuario haya valorado la película, agradecerle su visita. */
+
+//abrirParacaidas()
