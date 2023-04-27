@@ -27,7 +27,7 @@ la mayoría de edad.
 ● Si su edad es impar, decirle en cualquiera de los mensajes: "¿Sabías que tu
 edad es impar?". */
 
-function esMayorDeEdad(edad) {
+/* function esMayorDeEdad(edad) {
     if (edad < 0) {
         return "Error, edad inválida. Por favor ingrese un número válido."
     } else if (edad === 21) {
@@ -38,8 +38,8 @@ function esMayorDeEdad(edad) {
         return "¿Sabías que tu edad es impar?"
     }
 }
-
-console.log(esMayorDeEdad(21));
+ */
+//console.log(esMayorDeEdad(21));
 
 
 /* Declará una función llamada totalAPagar() que reciba como parámetros: vehiculo y
@@ -52,21 +52,48 @@ cuenta las siguientes consideraciones:
 ● Si los litros consumidos están entre 0 y 25, se ha de añadir $50 al total a pagar.
 ● Si los litros consumidos son mayor a 25, se ha de añadir $25 al total a pagar.*/
 
-function totalAPagar(vehiculo, litro) {
-    let total = 0
-    let coche = 86
-    let moto = 70
-    let autobus = 55
-    if (vehiculo === coche) {
-        return vehiculo * litro
-    } else if (vehiculo === moto) {
-        return vehiculo *litro
-    } else if (vehiculo === autobus) {
-        return vehiculo * litro
+function totalAPagar(vehiculo, consumoXLtr) {
+    let resultado = 0
+    if (vehiculo == "coche") {
+        return 85 * consumoXLtr
+    } else if ( vehiculo == "moto") {
+        return 70 * consumoXLtr
+    } else if (vehiculo == "autobus") {
+        return 55 * consumoXLtr 
+    }
+}
+
+console.log(totalAPagar("coche", 26));
+
+
+function totalConsumido(consumoXLtr) {
+    if (consumoXLtr  > 0 && consumoXLtr  <= 25) {
+        return consumoXLtr + 50
+    } else if (consumoXLtr  > 25) {
+        return consumoXLtr + 25
+    }
+}
+
+console.log(totalConsumido(5));
+
+/* function calculo(num) {
+    let resultado = 0
+    if (num > 500) {
+        resultado = num * 0.18
+    } else if (num <= 500 && num >= 250) {
+        resultado = num * 0.15
+    } else {
+        resultado = num
     }
 
+    return resultado
 }
-console.log(totalAPagar(moto, 2))
+
+console.log(calculo(550))
+ */
+//condicion ? if condicion es verdadera : if condicion es falsa
+//const edad = 32;
+//const ciudadano = edad >= 18 ? "Puede votar" : "No puede votar";
 
 
 /*Local de sándwiches
