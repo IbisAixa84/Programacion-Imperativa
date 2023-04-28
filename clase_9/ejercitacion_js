@@ -2,18 +2,9 @@ const prompt = require('prompt-sync')()
 
 /* Más ejercicios  BUCLES Y REPETICIONES / Ciclos: Repetir, repetir...
 
-
-1) Escribí un programa que le pida al usuario ingresar una frase y
-la imprima en la consola.*/
-
-const frase = prompt('Ingrese frase:')
-console.log(frase);
-
 /*2) Escribí un programa que le pregunte al usuario su nombre e
 imprima "Hola " seguido del nombre y un signo de
-exclamación.
-Por ejemplo, si el usuario ingresa "Pedro" el programa debe
-imprimir en la consola "Hola Pedro!".*/
+exclamación.*/
 
 let nombre = (prompt('Ingrese su nombre:'))
 function ingresarNombre(nombre) {
@@ -33,7 +24,8 @@ let numB = Number(prompt('Ingrese segundo numero (B): '))
 function sumar(a , b) {
     return a + b
 }
-console.log(sumar(numA, numB))
+console.log(sumar(numA, numB)) 
+
 
 /*4) Escribí un programa que le pida al usuario su año de
 nacimiento e imprima su edad actual en la consola con la frase
@@ -50,7 +42,7 @@ function imprimirEdad(nacimiento) {
     return `"Tienes ${edad} años"`
 }
 
-console.log(imprimirEdad(nacimiento));
+console.log(imprimirEdad(nacimiento))
 
 
 /*5) Escribí un programa que piense un número de forma aleatoria
@@ -81,15 +73,17 @@ function imprimirNumerosPares(nInicial, nFinal, nContador) {
     }
 }
 
-imprimirNumerosPares(0, 100, 2)
+imprimirNumerosPares(0, 100, 2) 
+
 
 /*7) Escribí un programa que itere sobre el arreglo nombres e
 imprima cada uno en la consola:*/
- const nombres = ["Pedro","Pablo", "Maria", "Juan", "Diana"];
+
+const nombres = ["Pedro","Pablo", "Maria", "Juan", "Diana"];
 
  for (i = 0; i < nombres.length; i++) {
     console.log(nombres[i]);
-  } 
+}  
 
 
 /*8) Construí un pseudocódigo que permita ingresar un número, si
@@ -104,7 +98,7 @@ function numeroMayor(num) {
     }
 }
 
-console.log(numeroMayor(502));
+console.log(numeroMayor(502)); 
 
 
 /*9) Escribí una función llamada elemento que recibe un arreglo
@@ -138,24 +132,19 @@ function numerosNaturales(namber) {
 numerosNaturales(9)
 
 
-
 /*12) Hacer un programa que calcule la suma de los N primeros
 números naturales, dónde N es el número límite ingresado por
 teclado. */
 
+// Solicitar al usuario que ingrese el numero
+let N = Number(prompt("Ingrese el numero limite (N): "))
+
+// Inicializar la variable de suma
 let suma = 0
-do{
-  let numeros = prompt("Digita el numero o los numeros a sumar")  
-  if (Number(numeros) == numeros) {
-    numeros = Number(numeros)
-    suma = suma + numeros
-} 
-else {
-   if(numeros != undefined)
-    alert(numeros + "No es un valor numerico valido)
-  }
+
+// Calcular la suma de los N primeros números naturales
+for (let i = 1; i <= N; i++) {
+    suma += i
 }
 
-}while(numeros != undefined)
-document.write("La suma de los numeros ingresado es: " + suma)
-
+console.log("La suma de los", 2, "primeros números naturales es:", suma);
