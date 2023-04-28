@@ -33,7 +33,7 @@ console.log(canRun(2.1, true));
 console.log(canRun(1.3, true));
 console.log(canRun(1.3, false));
 console.log(canRun(1.1, false));
-console.log(canRun(1.1, true));
+console.log(canRun(1.1, true)); 
 
 let num = 15 % 2 === 0 ? 15 : 0   // despues del signo de pregunta '15' pasa si es verdadero , '0' si nsi no lo es
 
@@ -59,6 +59,7 @@ function finDeSemana (dia) {
  }
 }
 
+console.log(finDeSemana (dia));
 
 
 /* 
@@ -84,4 +85,4 @@ function tengoClases(dia) {
     }
 }
 
-
+console.log(tengoClases(dia));

@@ -54,29 +54,69 @@ cuenta las siguientes consideraciones:
 ● Si los litros consumidos están entre 0 y 25, se ha de añadir $50 al total a pagar.
 ● Si los litros consumidos son mayor a 25, se ha de añadir $25 al total a pagar.*/
 
-/* function totalAPagar(vehiculo, consumoXLtr) {
-    let resultado = 0
+/* function totalAPagar(vehiculo, litrosConsumidos) {
+    let precioPorLitro
     if (vehiculo == "coche") {
-        return 85 * consumoXLtr
+        precioPorLitro = 86 * litrosConsumidos
     } else if ( vehiculo == "moto") {
-        return 70 * consumoXLtr
+        precioPorLitro = 70 * litrosConsumidos
     } else if (vehiculo == "autobus") {
-        return 55 * consumoXLtr 
+        precioPorLitro = 55 * litrosConsumidos 
     }
-} */
 
-//console.log(totalAPagar("coche", 26));
-
-
-/* function totalConsumido(totalAPagar) {
-    if (consumoXLtr  > 0 && consumoXLtr  <= 25) {
-        return consumoXLtr + 50
-    } else if (consumoXLtr  > 25) {
-        return consumoXLtr + 25
+let totalAPagar = litrosConsumidos * precioPorLitro 
+    if (litrosConsumidos > 0 && litrosConsumidos < 25) {
+        totalAPagar += 50
+    } else if (litrosConsumidos > 25){
+        totalAPagar += 25
     }
+    return totalAPagar
 }
 
-console.log(totalConsumido(5)); */
+const vehiculo = "coche"
+const litros = 20
+const resultado = totalAPagar(vehiculo, litros)
+console.log("Total a pagar:", resultado) */
+
+
+
+
+
+
+function totalAPagar(vehiculo, litrosConsumidos) {
+    let precioPorLitro
+  
+switch (vehiculo) {
+    case "coche":
+        precioPorLitro = 86;
+        break;
+    case "moto":
+        precioPorLitro = 70;
+        break;
+    case "autobús":
+        precioPorLitro = 55;
+        break;
+    default:
+        console.log("Vehículo no válido")
+    return
+}
+  
+let totalAPagar = litrosConsumidos * precioPorLitro
+  
+if (litrosConsumidos <= 25) {
+    totalAPagar += 50
+    } else {
+    totalAPagar += 25
+    }
+   return totalAPagar
+}
+
+  
+const vehiculo = "coche"
+const litros = 20
+const resultado = totalAPagar(vehiculo, litros)
+console.log("Total a pagar:", resultado) 
+
 
 
 //condicion ? if condicion es verdadera : if condicion es falsa
@@ -121,21 +161,78 @@ función deberá consultar primero qué tipo de sándwich base se seleccionó, l
 tipo de pan, y por último deberá verificar qué adicionales se seleccionaron.
 Finalmente, deberá retornar el valor numérico del total a pagar del cliente. */
 
-/* let dia = 'jueves'
-function finDeSemana (dia) {	
-	switch (dia) {
-		case 'viernes':
- 		console.log('buen finde');
- 		break;
-		case 'lunes':
- 		console.log('buena semana');
- 		break;
-	default:
- 	console.log('buen dia');
- }
-} */
+/* function calcularTotalAPagar(sandwichBase, tipoPan, queso, tomate, lechuga, cebolla, mayonesa, mostaza) {
+    let precioBase
+  
+switch (sandwichBase) {
+    case "pollo":
+        precioBase = 150;
+        break;
+    case "carne":
+        precioBase = 200;
+        break;
+    case "veggie":
+        precioBase = 100;
+        break;
+    default:
+        console.log("Sándwich base no válido");
+    return;
+}
+  
+let precioPan
+  
+switch (tipoPan) {
+    case "blanco":
+        precioPan = 50;
+        break;
+    case "negro":
+        precioPan = 60;
+        break;
+    case "s/gluten":
+        precioPan = 75;
+        break;
+    default:
+        console.log("Tipo de pan no válido")
+    return
+}
+  
+let totalAdicionales = 0
+  
+if (queso) {
+    totalAdicionales += 20
+    }
+if (tomate) {
+    totalAdicionales += 15
+    }
+if (lechuga) {
+    totalAdicionales += 10
+    }
+if (cebolla) {
+    totalAdicionales += 15
+    }
+if (mayonesa) {
+    totalAdicionales += 5
+    }
+if (mostaza) {
+    totalAdicionales += 5
+}
+  
+const totalAPagar = precioBase + precioPan + totalAdicionales
+return totalAPagar
+}
 
-
+const sandwichBase = "pollo"
+const tipoPan = "blanco"
+const queso = true
+const tomate = true
+const lechuga = false
+const cebolla = true
+const mayonesa = true
+const mostaza = false
+  
+const totalAPagar = calcularTotalAPagar(sandwichBase, tipoPan, queso, tomate, lechuga, cebolla, mayonesa, mostaza);
+console.log("Total a pagar:", totalAPagar) 
+ */
 
 /* ¿Cuál es el número secreto?
 Creá una función que reciba un parámetro numérico y verifique si el mismo es el
@@ -144,22 +241,46 @@ entre 1 y 10 —investigá qué hace la función Math.random()—. En caso de se
 retorna un mensaje felicitando al usuario y, en caso de que no acierte, retorna un
 mensaje de aliento junto con el número ingresado y el secreto.*/
 
-let numA = Number(prompt('Ingrese su nombre (A): '))
-//let numB = Number(prompt('Ingrese su apellido (B): '))
-function gettRandomInt(numA) {
-    //let numeroSecreto  
-    return Math.floor(Math.random() * (numA)) 
+/* function getRandomInt(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
-console.log(gettRandomInt(numA))
+function gettRandomInt(numA) {
+    let nroSecreto = getRandomInt(2,10)
+    console.log(nroSecreto)
+    msg = nroSecreto == numA 
+    ? "Felicidades es el numero secreto." 
+    : "Sigue intentando, no es el numero secreto"
+    return msg
+}
 
+console.log(gettRandomInt(9))
+ */
 
 /* Crea una función llamada abrirParacaidas() que recibe dos parámetros: velocidad y
 altura. La función deberá decirnos si el paracaídas debe abrirse teniendo en cuenta lo
 siguiente:
 ● La velocidad debe ser menor a 1000 km/h.
-● La altura debe ser mayor o igual a 2000 m y menor a 3000 m.
-Estructura switch
+● La altura debe ser mayor o igual a 2000 m y menor a 3000 m.*/
+
+/* function abrirParacaidas(velocidad, altura) {
+    if (velocidad < 1000 && altura >= 2000 && altura < 3000) {
+        return "El paracaidas podra abrirse"
+    } else {
+        return "El paracaidas no podra abrirse"
+    }
+} 
+
+const velocidad = 800; // km/h
+const altura = 2500; // metros
+
+const resultados = abrirParacaidas(velocidad, altura)
+console.log(resultados)
+ */
+
+/*Estructura switch
 En estos ejercicios utilizaremos variables que contengan los valores para simular el
 ingreso de data de un usuario. Es decir, una variable stringUno que contenga —por
 ejemplo— el valor “perro”, que sería lo que el usuario “ingresa” como valor en nuestro
@@ -169,8 +290,30 @@ Usando la estructura switch, crea un programa en el que si un usuario ingresa "c
 "perro", "pelota", "árbol" o "genio", nos devuelva la misma palabra traducida al idioma
 inglés.
 En caso de que la palabra sea distinta a la esperada, mostrarle un mensaje que le
-informe que la palabra ingresada es incorrecta.
-Valoración de películas
+informe que la palabra ingresada es incorrecta.*/
+
+/* let stringUno =  "perro"
+
+function finDeSemana(stringUno) {	
+    switch (stringUno) {
+        case 'casa':
+            console.log('house');
+            break;
+        case 'perro':
+            console.log('dog');
+            break;
+        case 'arbol':
+            console.log('tree');
+            break;    
+    default:
+      console.log('La palabra ingresada es incorrecta');
+    }
+} 
+
+console.log(finDeSemana(stringUno));
+ */
+
+/*Valoración de películas
 Usando la estructura switch, pedirle al usuario que valore la película que acaba de ver
 según la siguiente escala:
 ● Muy mala.
@@ -185,4 +328,28 @@ En caso de que ingresara un valor distinto, mostrarle el mensaje: "Ingresaste un
 inválido".
 Cuando el usuario haya valorado la película, agradecerle su visita. */
 
-//abrirParacaidas()
+/* let valoracion =  "Muy buena"
+
+function finDeSemana(valoracion) {	
+    switch (valoracion) {
+        case 'Muy mala':
+            console.log('Calificaste la película como Muy Mala. Lo lamentamos mucho. Gracias por su visita');
+            break;
+        case 'Mala':
+            console.log('Calificaste la película como Mala. Lo lamentamos mucho. Gracias por su visita');
+            break;
+        case 'Mediocre':
+            console.log('Calificaste la película como Mediocre. Lo lamentamos mucho. Gracias por su visita');
+            break;    
+        case 'Buena':
+            console.log('Calificaste la película como Buena. Nos alegramos mucho. Gracias por su visita');
+            break;
+        case 'Muy buena':
+            console.log('Calificaste la película Muy buena. Nos alegramos mucho. Gracias por su visita');
+            break;        
+    default:
+      console.log('Ingresaste un valor inválido');
+    }
+} 
+
+console.log(finDeSemana(valoracion)); */
