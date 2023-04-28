@@ -1,14 +1,4 @@
-/* ARREGLO DE OBJETOS
-
-Debes crear una funcion llamada arregloDeObjetos que reciba un numero como parametro y devuelva un
-arreglo de objetos que tenga una propiedad llamada 'valor' que contenga el valor del numero y sus 
-anteriores. 
-
-Ejemplos:
-arregloDeObjetos(5) debe retornar [{valor: 1}, {valor: 2}, {valor: 3}, {valor: 4}, {valor: 5}]
-arregloDeObjetos(3) debe retornar [{valor: 1}, {valor: 2}, {valor: 3}] */
-
-/* Paso a paso:
+/* ARREGLO DE OBJETOS. Paso a paso:
 - Definir/crear la funcion con un parametro
     - Crear arreglo vacio
     - "Rellenar el arreglo"
@@ -21,16 +11,16 @@ arregloDeObjetos(3) debe retornar [{valor: 1}, {valor: 2}, {valor: 3}] */
 - Fin funcion */
 
 function arregloDeObjetos(num) {
-  let arrObjetos = []
+  let valor = []
   for (let i = 1; i <= num; i++) {
     let obj = { valor: i }
-    arrObjetos.push(obj)
+    valor.push(obj)
   }
-  return arrObjetos
+  return valor
 }
 
 console.table(arregloDeObjetos(5));
-
+console.table(arregloDeObjetos(3));
 
 
 // OBJETOS LITERALES
@@ -52,14 +42,11 @@ let perro = {
 }
 
 
-E/* jercicio 2: Objetos entrenadores
+/* Ejercicio 2: Objetos entrenadores
 Vamos a reforzar el concepto de un objeto literal tratando de representar un deportista y pedirle que entrene.
 Para este ejercicio contamos con un objeto literal deportista ya definido, que tiene los siguientes atributos: nombre, energia, experiencia.
-
 Queremos poder pedirle al deportista que entrene. Para esto, nuestro trabajo va a ser completar la función entrenarHoras.
-
 La función entrenarHoras tiene las siguientes tres características:
-
 Recibe por parámetro la cantidad de horas.
 Resta a su energía (this.energia) la cantidad de horas x 5.
 Incrementa su experiencia (this.experiencia) la cantidad de horas x 2.
