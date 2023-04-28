@@ -1,29 +1,11 @@
 /* Objetos literales
 
-Como vimos, los objetos son unas de las estructuras más importantes de la
-programación, tanto que hay toda un área en función de ellos. Para entender mejor por
-qué son tan útiles e importantes vamos a realizar una serie de prácticas con el fin de
-afianzar las particularidades y utilidades que nos ofrecen.
-Para esta actividad, recordá que podés verificar cada punto ejecutando los métodos y las
-operaciones que realices para asegurarte de que todo funcione correctamente.
 Descripción del problema
 Desde un banco nos contactan para crear una aplicación que pueda facilitar el manejo
 de información y las acciones que el mismo necesita. Nuestro tech leader nos facilita la
 forma de representar a los usuarios (cuentas bancarias). Cada una de estas cuentas
-tiene la siguiente información:
+tiene la siguiente información
 
-● N.o de cuenta (solo números).
-● Tipo de cuenta (cuenta corriente en pesos o caja de ahorro en
-pesos).
-● Saldo en pesos (solo la cantidad).
-● Titular de la cuenta (nombre completo).
-
-Teniendo en cuenta esta información, se nos pide que hagamos lo siguiente:
-1. Descargar y analizar el siguiente archivo, el cual contiene la lista de clientes
-(cuentas bancarias).
-2. Nos solicitan también crear un objeto literal llamado “banco”, el cual tendrá una
-propiedad llamada “clientes” que estará compuesta de la lista de objetos
-obtenidos en el punto anterior.
 3. Al objeto “banco”, crearle un método llamado consultarCliente, el cual recibirá un
 nombre (titular) por parámetro, deberá buscarlo en la lista de cuentas y retornar el
 objeto cliente que corresponda con ese nombre ingresado.
@@ -41,43 +23,42 @@ De lo contrario, deberá imprimir “Extracción realizada correctamente, su nue
 saldo es: XXXX”.
 Si llegaste hasta acá, felicidades, el equipo de desarrollo y el tech leader están
 impresionados con tu trabajo. */
-/* 
-let clienteEncontrado = banco.consultarCliente("Ramon Connell");
+
+let clienteEncontrado = banco.consultarCliente("Ramon Connell")
 
 //la lista de clientes.
 let arrayCuentas = [
-    {
-      nroCuenta: 5486273622,
-      tipoDeCuenta: "Cuenta Corriente",
-      saldoEnPesos: 27771,
-      titularCuenta: "Abigael Natte",
-    },
-    {
-      nroCuenta: 1183971869,
-      tipoDeCuenta: "Caja de Ahorro",
-      saldoEnPesos: 8675,
-      titularCuenta: "Ramon Connell",
-    },
-    {
-      nroCuenta: 9582019689,
-      tipoDeCuenta: "Caja de Ahorro",
-      saldoEnPesos: 27363,
-      titularCuenta: "Jarret Lafuente",
-    },
-    {
-      nroCuenta: 1761924656,
-      tipoDeCuenta: "Cuenta Corriente",
-      saldoEnPesos: 32415,
-      titularCuenta: "Ansel Ardley",
-    },
-    {
-      nroCuenta: 7401971607,
-      tipoDeCuenta: "Cuenta Unica",
-      saldoEnPesos: 18789,
-      titularCuenta: "Jacki Shurmer",
-    },
-  ];
-  // podes continuar tu codigo a partir de aca!
+  {
+    nroCuenta: 5486273622,
+    tipoDeCuenta: "Cuenta Corriente",
+    saldoEnPesos: 27771,
+    titularCuenta: "Abigael Natte",
+  },
+  {
+    nroCuenta: 1183971869,
+    tipoDeCuenta: "Caja de Ahorro",
+    saldoEnPesos: 8675,
+    titularCuenta: "Ramon Connell",
+  },
+  {
+    nroCuenta: 9582019689,
+    tipoDeCuenta: "Caja de Ahorro",
+    saldoEnPesos: 27363,
+    titularCuenta: "Jarret Lafuente",
+  },
+  {
+    nroCuenta: 1761924656,
+    tipoDeCuenta: "Cuenta Corriente",
+    saldoEnPesos: 32415,
+    titularCuenta: "Ansel Ardley",
+  },
+  {
+    nroCuenta: 7401971607,
+    tipoDeCuenta: "Cuenta Unica",
+    saldoEnPesos: 18789,
+    titularCuenta: "Jacki Shurmer",
+  },
+];
 
 const banco = {
   clientes: arrayCuentas
@@ -131,40 +112,61 @@ const banco = {
   }
 }
 
-console.log('****** Metodo consultar cliente ******');
-console.log(banco.consultarCliente('Jarret Lafuente'));
-console.log(banco.consultarCliente('Abigael'));
-console.log('****** Metodo deposito ******');
-console.log(banco.consultarCliente('Abigael Natte', 1000));
-console.log(banco.consultarCliente('Abigael', 1000));
-console.log('****** Metodo extraccion ******');
-console.log(banco.consultarCliente('Abigael Natte', 1000));
-console.log(banco.consultarCliente('Abigael Natte', 30000));
-console.log(banco.consultarCliente('Abigael', 30000));
- */
+console.log('****** Metodo consultar cliente ******')
+console.log(banco.consultarCliente('Jarret Lafuente'))
+console.log(banco.consultarCliente('Abigael'))
+console.log('****** Metodo deposito ******')
+console.log(banco.consultarCliente('Abigael Natte', 1000))
+console.log(banco.consultarCliente('Abigael', 1000))
+console.log('****** Metodo extraccion ******')
+console.log(banco.consultarCliente('Abigael Natte', 1000))
+console.log(banco.consultarCliente('Abigael Natte', 30000))
+console.log(banco.consultarCliente('Abigael', 30000))
 
-  /* Bonus extra
-Para que no te quedes con las ganas y puedas seguir practicando si así lo deseas, te
-proponemos algunos ejercicios más. Tené en cuenta que a partir de acá los ejercicios
-pueden escalar en dificultad. Como siempre decimos, paciencia, ignorá la complejidad y
-tratá de resolverlo con las herramientas que tengas a tu disposición. También podés
-buscar información extra en Google o documentaciones que conozcas.
 
-Propiedad única
-Crear una función llamada propiedadUnica que reciba un arreglo de objetos como
-parámetro y un string. Esta deberá retornar un nuevo arreglo de objetos, teniendo como
-parámetro la propiedad que fue pasada como string.
-Ejemplo:
-let array = [ { nombre: “Lean”, edad: 27 }, { nombre: “Eze”, edad: 49} ]
-propiedadUnica(array, “edad”) debe retornar [ { edad: 27 }, { edad: 49 } ]
-propiedadUnica(array, “nombre”) debe retornar [ { nombre: “Lean”}, { nombre: “Eze” } ]
-Calculador de notas
-Crear el objeto “alumno”, el cual va a consistir de las siguientes propiedades básicas:
-● Nombre
-● Número de legajo
-● Lista de notas
-Nos gustaría calcular el promedio del alumno y si el mismo está aprobado, basado en una
-nota de aprobación que le va a ser dada. Para este ejercicio, vamos a dejar que pienses
-todos los métodos y propiedades que puedan hacer falta para que el programa funcione
-correctamente de la manera solicitada. */
+/* Propiedad única
+Aquí tienes la implementación de la función propiedadUnica y del objeto "alumno" con los cálculos de promedio y aprobación:
+*/ 
 
+// Función propiedadUnica
+function propiedadUnica(arr, prop) {
+  return arr.map(function(obj) {
+    let newObj = {}
+    newObj[prop] = obj[prop]
+    return newObj
+  })
+}
+
+// Ejemplo de uso de la función propiedadUnica
+let array = [
+  { nombre: "Lean", edad: 27 },
+  { nombre: "Eze", edad: 49 }
+];
+console.log(propiedadUnica(array, "edad")) // [{ edad: 27 }, { edad: 49 }]
+console.log(propiedadUnica(array, "nombre"));// [{ nombre: "Lean" }, { nombre: "Eze" }]
+
+// Objeto alumno
+let alumno = {
+  nombre: "Juan",
+  numeroLegajo: 12345,
+  notas: [8, 7, 9, 6, 8],
+  calcularPromedio: function() {
+    let suma = this.notas.reduce(function(acc, nota) {
+      return acc + nota
+    }, 0)
+    return suma / this.notas.length
+  },
+  verificarAprobacion: function(notaAprobacion) {
+    let promedio = this.calcularPromedio()
+    return promedio >= notaAprobacion
+  }
+}
+
+// Ejemplo de uso de los métodos del objeto alumno
+console.log("Promedio: " + alumno.calcularPromedio())
+console.log("Aprobado: " + alumno.verificarAprobacion(7.5))
+
+/* En el código anterior, se define la función propiedadUnica que recibe un arreglo de objetos arr y un string prop. La función utiliza el método map para crear un nuevo arreglo de objetos, donde cada objeto solo tiene la propiedad especificada por prop. Se retorna el nuevo arreglo de objetos.
+Luego, se muestra un ejemplo de uso de la función propiedadUnica con el arreglo array y las propiedades "edad" y "nombre".
+Después, se crea el objeto "alumno" con las propiedades básicas: nombre, número de legajo y lista de notas. El objeto "alumno" tiene dos métodos: calcularPromedio, que calcula el promedio de las notas, y verificarAprobacion, que verifica si el alumno está aprobado basado en una nota de aprobación dada.
+Se muestra un ejemplo de uso de los métodos del objeto "alumno" para calcular el promedio y verificar la aprobación.*/
