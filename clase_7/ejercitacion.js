@@ -280,7 +280,7 @@ const resultados = abrirParacaidas(velocidad, altura)
 console.log(resultados)
  */
 
-/*Estructura switch
+/*
 En estos ejercicios utilizaremos variables que contengan los valores para simular el
 ingreso de data de un usuario. Es decir, una variable stringUno que contenga —por
 ejemplo— el valor “perro”, que sería lo que el usuario “ingresa” como valor en nuestro
