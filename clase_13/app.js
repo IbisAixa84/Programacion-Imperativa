@@ -1,13 +1,6 @@
 /*
 1.Crear un array llamado misMascotas
-2.Dentro de este array creamos un objeto para cada mascota. Cada objeto debera tener:
-nombre
-raza
-edad 
-sonido 
-un metodo que nos retorne ese sonido 2 veces 
-3.Cuando este listo, verificar en consola  
-*/
+2.Dentro de este array creamos un objeto para cada mascota. Cada objeto debera tener: un metodo que nos retorne ese sonido 2 veces */
 
 let misMascotas = [
     {

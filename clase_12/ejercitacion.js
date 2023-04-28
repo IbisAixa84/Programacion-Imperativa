@@ -4,8 +4,8 @@ const alicia = [10, 80, 75]
 const bob = [90, 20, 25]
 
 const Concurso = {
-  etapas: []
-  ganador: ""
+  etapas: [],
+  ganador: "",
 
   encontrarGanador: function(a, b) {
     let puntosPrimerParticipante = 0
@@ -28,7 +28,7 @@ const Concurso = {
     }
 
     this.etapas.push({
-      puntosAlicia: puntosPrimerParticipante
+      puntosAlicia: puntosPrimerParticipante,
       puntosBob: puntosSegundoParticipante
     });
 
